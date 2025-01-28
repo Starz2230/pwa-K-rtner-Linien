@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="initial-scale=1.0, width=device-width, viewport-fit=cover">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Fullscreen PWA Demo</title>
 
-  <!-- iOS: App im "Standalone" oder "Fullscreen"-Modus -->
+  <!-- iOS/Apple PWA-Settings -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <!-- Statusbar-Stil: black, black-translucent oder default -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- PWA Manifest -->
+  <!-- Manifest & Theme -->
   <link rel="manifest" href="manifest.json" />
-
-  <!-- Optionale Apple-Touch-Icons (wenn du App-Icons hast) -->
-  <link rel="apple-touch-icon" href="icon-192.png" />
-
-  <!-- Theme-Farbe für Android -->
   <meta name="theme-color" content="#000000" />
+
+  <!-- (Optional) Icon -->
+  <link rel="apple-touch-icon" href="icon-192.png" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- SCREEN 1 (Loading Screen) -->
+  <!-- SCREEN 1: Ladebildschirm (Bild 3 = IMG_5380.PNG) -->
   <div class="screen" id="screen-loading">
-    <img src="IMG_5378.PNG" alt="Loading Screen" class="fullscreen-image" />
-    <!-- Optional: ein kleiner Text oder Spinner -->
-    <div class="overlay-text"></div>
+    <img src="IMG_5380.PNG" alt="Loading Screen" class="fullscreen-image" />
+    <p class="overlay-text">Wird geladen...</p>
   </div>
 
-  <!-- SCREEN 2 (Home) -->
+  <!-- SCREEN 2: Home (Bild 2 = IMG_5379.PNG) -->
   <div class="screen hidden" id="screen-home">
     <img src="IMG_5379.PNG" alt="Home Screen" class="fullscreen-image" />
-    <button class="overlay-button" id="btn-open-ticket"></button>
+    <button class="overlay-button" id="btn-open-video">Mein Video</button>
   </div>
 
-  <!-- SCREEN 3 (Ticket) -->
-  <div class="screen hidden" id="screen-ticket">
-    <img src="IMG_5380.PNG" alt="Ticket Screen" class="fullscreen-image" />
-    <div class="overlay-text"></div>
+  <!-- SCREEN 3: VIDEO -->
+  <div class="screen hidden" id="screen-video">
+    <video id="myVideo" class="fullscreen-video" controls>
+      <source src="myVideo.mp4" type="video/mp4" />
+      <!-- Alternativ: <source src="https://example.com/mein-video.mp4" type="video/mp4"> -->
+      Dein Browser unterstützt kein HTML5-Video.
+    </video>
+    <button class="overlay-button bottom-right" id="btn-back-home">Zurück</button>
   </div>
 
   <script src="app.js"></script>
