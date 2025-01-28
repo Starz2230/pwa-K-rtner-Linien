@@ -52,7 +52,7 @@ html, body {
 
 /* z.B. Button etwas stylen */
 .overlay-button {
-  margin-top: 100px;
+  margin-top: 1000px;
   background: rgba(0,0,0,0.5);
   border: none;
   padding: 10px 20px;
