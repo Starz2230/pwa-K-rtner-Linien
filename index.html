@@ -36,11 +36,34 @@
     <button class="overlay-button" id="btn-open-ticket">Mein Ticket</button>
   </div>
 
-  <!-- SCREEN 3 (Ticket) -->
-  <div class="screen hidden" id="screen-ticket">
-    <img src="IMG_5378.PNG" alt="Ticket Screen" class="fullscreen-image" />
-    <div class="overlay-text">Hier könnten Ticketdetails stehen ...</div>
+  <!-- SCREEN 3: VIDEO-Screen -->
+  <div class="screen hidden" id="screen-video">
+    <!-- 
+      Video im Loop, ohne Steuerelemente:
+      - autoplay: startet automatisch
+      - muted: kein Ton
+      - playsinline: iOS soll es im Seitenlayout abspielen, nicht Vollbild
+      - loop: Endlosschleife
+      - KEIN "controls": keine Zeit-/Lautstärke-Anzeige
+    -->
+    <video
+      id="myVideo"
+      class="fullscreen-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="pav-4328CD92-C938-44A9-80FC-72F86D2B4C14.mp4" type="video/mp4" />
+      <!-- Fallback-Text -->
+      Dein Browser unterstützt kein HTML5-Video.
+    </video>
+
+    <!-- Zurück-Button (wenn du willst, kannst du ihn entfernen) -->
+    <button class="overlay-button bottom-right" id="btn-back-home">Zurück</button>
   </div>
+
 
   <script src="app.js"></script>
 </body>
