@@ -46,8 +46,7 @@ body {
 
 /* Button */
 button {
-  background: #008c7a;
-  color: #fff;
+  background: transparent;
   padding: 10px 20px;
   border: none;
   font-size: 1rem;
