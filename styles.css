@@ -52,8 +52,8 @@ html, body {
 
 /* z.B. Button etwas stylen */
 .overlay-button {
-  margin-top: 700px;
-  background: rgba(0,0,0,0.5);
+  margin-top: 650px;
+  background: rgba(0,0,0,0);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
