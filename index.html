@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kärntner Linien PWA Demo</title>
+
+  <!-- Meta-Tags für iOS-PWA (optional, aber empfehlenswert) -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kaernten Linien" />
+
+  <!-- PWA-Manifesteinbindung -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Beispiel-Icon oder Apple-Touch-Icon -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  
+  <!-- Theme-Farbe für Android / Chrome -->
+  <meta name="theme-color" content="#008c7a" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+
+  <!-- SCREEN 1: LOADING-SCREEN (Bild 3) -->
+  <div class="screen" id="screen-loading">
+    <img src="images/bild3.png" alt="Ladebildschirm" class="screen-image" />
+    <p class="info-text">Wird geladen ...</p>
+  </div>
+
+  <!-- SCREEN 2: HOME (Bild 2) -->
+  <div class="screen hidden" id="screen-home">
+    <img src="images/bild2.png" alt="Willkommen" class="screen-image" />
+    <p class="info-text">
+      Willkommen bei den Kärntner Linien!  
+      <br />
+      <button id="btn-open-ticket">Mein Ticket</button>
+    </p>
+  </div>
+
+  <!-- SCREEN 3: TICKET (Bild 1) -->
+  <div class="screen hidden" id="screen-ticket">
+    <img src="images/bild1.png" alt="Ticket-Screen" class="screen-image" />
+    <p class="info-text">
+      Hier könnten weitere Ticketinformationen stehen ...
+    </p>
+  </div>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+</html>
