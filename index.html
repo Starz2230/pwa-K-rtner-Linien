@@ -2,54 +2,47 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kärntner Linien PWA Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PWA Kärntner Linien Demo</title>
 
-  <!-- Meta-Tags für iOS-PWA (optional, aber empfehlenswert) -->
+  <!-- iOS/Apple PWA-Tags (optional, aber sinnvoll) -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Kaernten Linien" />
+  <meta name="apple-mobile-web-app-title" content="Kärntner Linien" />
 
-  <!-- PWA-Manifesteinbindung -->
+  <!-- Manifest für PWA -->
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Beispiel-Icon oder Apple-Touch-Icon -->
-  <link rel="apple-touch-icon" href="icons/icon-192.png" />
-  
-  <!-- Theme-Farbe für Android / Chrome -->
-  <meta name="theme-color" content="#008c7a" />
+  <!-- Beispiel-Icon (falls vorhanden) -->
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="theme-color" content="#008c7a"/>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 <body>
 
-  <!-- SCREEN 1: LOADING-SCREEN (Bild 3) -->
+  <!-- SCREEN 1: LADEBILDSCHIRM (Bild 3 = IMG_5380.PNG) -->
   <div class="screen" id="screen-loading">
-    <img src="images/bild3.png" alt="Ladebildschirm" class="screen-image" />
+    <img src="IMG_5380.PNG" alt="Ladebildschirm" class="screen-image" />
     <p class="info-text">Wird geladen ...</p>
   </div>
 
-  <!-- SCREEN 2: HOME (Bild 2) -->
+  <!-- SCREEN 2: HOME (Bild 2 = IMG_5379.PNG) -->
   <div class="screen hidden" id="screen-home">
-    <img src="images/bild2.png" alt="Willkommen" class="screen-image" />
+    <img src="IMG_5379.PNG" alt="Willkommen" class="screen-image" />
     <p class="info-text">
-      Willkommen bei den Kärntner Linien!  
-      <br />
+      Willkommen bei den Kärntner Linien! <br />
       <button id="btn-open-ticket">Mein Ticket</button>
     </p>
   </div>
 
-  <!-- SCREEN 3: TICKET (Bild 1) -->
+  <!-- SCREEN 3: TICKET (Bild 1 = IMG_5378.PNG) -->
   <div class="screen hidden" id="screen-ticket">
-    <img src="images/bild1.png" alt="Ticket-Screen" class="screen-image" />
-    <p class="info-text">
-      Hier könnten weitere Ticketinformationen stehen ...
-    </p>
+    <img src="IMG_5378.PNG" alt="Ticket-Screen" class="screen-image" />
+    <p class="info-text">Hier könnten weitere Ticketinformationen stehen ...</p>
   </div>
 
-  <!-- JS -->
+  <!-- JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
