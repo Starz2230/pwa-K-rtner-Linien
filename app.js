@@ -1,25 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const screenLoading = document.getElementById('screen-loading');
-  const screenHome = document.getElementById('screen-home');
-  const screenTicket = document.getElementById('screen-ticket');
-  const btnOpenTicket = document.getElementById('btn-open-ticket');
+// Nach 2s Lade-Screen weg, Home anzeigen
+setTimeout(() => {
+  document.getElementById('screen-loading').classList.add('hidden');
+  document.getElementById('screen-home').classList.remove('hidden');
+}, 2000);
 
-  // Nach 2s wechselt der Lade-Screen zum Home-Screen
-  setTimeout(() => {
-    screenLoading.classList.add('hidden');
-    screenHome.classList.remove('hidden');
-  }, 2000);
-
-  // Button "Mein Ticket" => Ticket-Screen
-  btnOpenTicket.addEventListener('click', () => {
-    screenHome.classList.add('hidden');
-    screenTicket.classList.remove('hidden');
-  });
+// Klick auf Button => Video-Screen
+document.getElementById('btn-open-video').addEventListener('click', () => {
+  document.getElementById('screen-home').classList.add('hidden');
+  document.getElementById('screen-video').classList.remove('hidden');
 });
 
-// Service Worker (PWA)
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js')
-    .then(() => console.log('Service Worker registriert.'))
-    .catch(err => console.error('Service Worker Fehler:', err));
-}
+// Klick auf "Zurück"-Button => zurück zum Home
+document.getElementById('btn-back-home').addEventListener('click', () => {
+  document.getElementById('screen-video').classList.add('hidden');
+  document.getElementById('screen-home').classList.remove('hidden');
+  // Optional: Video zurücksetzen
+  const vid = document.getElementById('myVideo');
+  vid.pause();
+  vid.currentTime = 0;
+});
