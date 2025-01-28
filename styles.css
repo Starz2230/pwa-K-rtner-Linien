@@ -1,59 +1,59 @@
-/* Grundlegendes Reset */
+/* Grundeinstellung */
 * {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: sans-serif;
-    background: #ffffff;
-    color: #333;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Jede "screen" füllt den gesamten Bereich */
-  .screen {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Ausblenden, wenn .hidden-Klasse gesetzt */
-  .hidden {
-    display: none;
-  }
-  
-  .screen-image {
-    max-width: 80%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .info-text {
-    text-align: center;
-    font-size: 1rem;
-    color: #444;
-  }
-  
-  /* Button Styling */
-  button {
-    background: #008c7a;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    opacity: 0.8;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #ffffff;
+  color: #333;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Jede "screen" füllt den gesamten Bereich */
+.screen {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ausblenden, wenn die Klasse .hidden drauf ist */
+.hidden {
+  display: none;
+}
+
+.screen-image {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.info-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Button */
+button {
+  background: #008c7a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}
