@@ -1,6 +1,5 @@
 self.addEventListener('install', event => {
   console.log('[Service Worker] Installiert');
-  // Optional: Dateien cachen.
 });
 
 self.addEventListener('activate', event => {
@@ -8,5 +7,5 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  // Optional: Caching-Strategien für Offline.
+  // Optional: Caching-Strategien einbauen
 });
