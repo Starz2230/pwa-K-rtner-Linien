@@ -2,67 +2,46 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <!-- iOS-spezifische Meta-Tags, damit Vollbild-PWA möglich ist -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Fullscreen PWA Demo</title>
+
+  <!-- iOS/Apple PWA-Settings -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <title>PWA mit Video-Loop</title>
-
-  <!-- PWA-Manifesteinbindung -->
+  <!-- Manifest & Theme -->
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#000000" />
 
   <!-- (Optional) Icon -->
   <link rel="apple-touch-icon" href="icon-192.png" />
-  
-  <!-- Dein CSS -->
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- SCREEN 1: Ladebildschirm (IMG_5378.png) -->
+  <!-- SCREEN 1: Ladebildschirm (Bild 3 = IMG_5380.PNG) -->
   <div class="screen" id="screen-loading">
-    <img src="IMG_5378.png" alt="Ladebildschirm" class="fullscreen-image" />
-    <p class="overlay-text">Wird geladen...</p>
+    <img src="IMG_5379.PNG" alt="Loading Screen" class="fullscreen-image" />
+    <p class="overlay-text"></p>
   </div>
 
-  <!-- SCREEN 2: Home-Screen (IMG_53781.png) -->
+  <!-- SCREEN 2: Home (Bild 2 = IMG_5379.PNG) -->
   <div class="screen hidden" id="screen-home">
-    <img src="IMG_53781.png" alt="Home Screen" class="fullscreen-image" />
-    <!-- Button, um das Video anzuzeigen -->
-    <button class="overlay-button" id="btn-open-video">Video anzeigen</button>
+    <img src="IMG_5380.PNG" alt="Home Screen" class="fullscreen-image" />
+    <button class="overlay-button" id="btn-open-video">Mein Video</button>
   </div>
 
-  <!-- SCREEN 3: VIDEO-Screen -->
+  <!-- SCREEN 3: VIDEO -->
   <div class="screen hidden" id="screen-video">
-    <!-- 
-      Video im Loop, ohne Steuerelemente:
-      - autoplay: startet automatisch
-      - muted: kein Ton
-      - playsinline: iOS soll es im Seitenlayout abspielen, nicht Vollbild
-      - loop: Endlosschleife
-      - KEIN "controls": keine Zeit-/Lautstärke-Anzeige
-    -->
-    <video
-      id="myVideo"
-      class="fullscreen-video"
-      autoplay
-      loop
-      muted
-      playsinline
-      preload="auto"
-    >
+    <video id="myVideo" class="fullscreen-video" controls>
       <source src="pav-4328CD92-C938-44A9-80FC-72F86D2B4C14.mp4" type="video/mp4" />
-      <!-- Fallback-Text -->
+      <!-- Alternativ: <source src="https://example.com/mein-video.mp4" type="video/mp4"> -->
       Dein Browser unterstützt kein HTML5-Video.
     </video>
-
-    <!-- Zurück-Button (wenn du willst, kannst du ihn entfernen) -->
     <button class="overlay-button bottom-right" id="btn-back-home">Zurück</button>
   </div>
 
-  <!-- Dein JS (app.js) mit Navigation/Service-Worker -->
   <script src="app.js"></script>
 </body>
 </html>
