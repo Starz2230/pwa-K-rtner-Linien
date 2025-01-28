@@ -1,58 +1,63 @@
-/* Grundeinstellung */
-* {
+/* Seite und Körper auf volle Größe setzen */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  width: 100vw; /* wichtig für iOS */
+  height: 100vh; /* wichtig für iOS */
+  overflow: hidden; /* Verhindert Scrollen */
+  /* Optional: iOS-Safe-Area-Inset (Notch) berücksichtigen */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
-body {
-  font-family: sans-serif;
-  background: #ffffff;
-  color: #333;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* Jede "screen" füllt den gesamten Bereich */
+/* Jeder Screen füllt den gesamten verfügbaren Platz */
 .screen {
   position: absolute;
-  top: 0; 
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-/* Ausblenden, wenn die Klasse .hidden drauf ist */
+/* Ausblenden, wenn .hidden */
 .hidden {
   display: none;
 }
 
-.screen-image {
-  max-width: 80%;
-  height: auto;
-  margin-bottom: 20px;
+/* Vollbild-Bilder */
+.fullscreen-image {
+  /* Nimmt ganze Fläche ein */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* oder 'contain', wenn du kein Beschnitt willst */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.info-text {
+/* Overlay-Text oder -Button */
+.overlay-text, .overlay-button {
+  position: relative; /* Damit es über dem Bild liegt */
+  z-index: 1;         /* Höher als das Bild */
+  color: #fff;
+  font-size: 1.2rem;
   text-align: center;
-  font-size: 1rem;
-  color: #444;
+  margin: 10px;
 }
 
-/* Button */
-button {
-  background: transparent;
-  padding: 10px 20px;
+/* z.B. Button etwas stylen */
+.overlay-button {
+  background: rgba(0,0,0,0.5);
   border: none;
-  font-size: 1rem;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
-button:hover {
-  opacity: 0.8;
+.overlay-button:hover {
+  background: rgba(0,0,0,0.7);
 }
