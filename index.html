@@ -2,47 +2,46 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PWA Kärntner Linien Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen PWA Demo</title>
 
-  <!-- iOS/Apple PWA-Tags (optional, aber sinnvoll) -->
+  <!-- iOS: App im "Standalone" oder "Fullscreen"-Modus -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Statusbar-Stil: black, black-translucent oder default -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Kärntner Linien" />
 
-  <!-- Manifest für PWA -->
+  <!-- PWA Manifest -->
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Beispiel-Icon (falls vorhanden) -->
+  <!-- Optionale Apple-Touch-Icons (wenn du App-Icons hast) -->
   <link rel="apple-touch-icon" href="icon-192.png" />
-  <meta name="theme-color" content="#008c7a"/>
+
+  <!-- Theme-Farbe für Android -->
+  <meta name="theme-color" content="#000000" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- SCREEN 1: LADEBILDSCHIRM (Bild 3 = IMG_5380.PNG) -->
+  <!-- SCREEN 1 (Loading Screen) -->
   <div class="screen" id="screen-loading">
-    <img src="IMG_5378.PNG" alt="Ladebildschirm" class="screen-image" />
-    <p class="info-text">Wird geladen ...</p>
+    <img src="IMG_5380.PNG" alt="Loading Screen" class="fullscreen-image" />
+    <!-- Optional: ein kleiner Text oder Spinner -->
+    <div class="overlay-text">Lade...</div>
   </div>
 
-  <!-- SCREEN 2: HOME (Bild 2 = IMG_5379.PNG) -->
+  <!-- SCREEN 2 (Home) -->
   <div class="screen hidden" id="screen-home">
-    <img src="IMG_5379.PNG" alt="Willkommen" class="screen-image" />
-    <p class="info-text">
-      <br />
-      <button id="btn-open-ticket">Me</button>
-    </p>
+    <img src="IMG_5379.PNG" alt="Home Screen" class="fullscreen-image" />
+    <button class="overlay-button" id="btn-open-ticket">Mein Ticket</button>
   </div>
 
-  <!-- SCREEN 3: TICKET (Bild 1 = IMG_5378.PNG) -->
+  <!-- SCREEN 3 (Ticket) -->
   <div class="screen hidden" id="screen-ticket">
-    <img src="IMG_5380.PNG" alt="Ticket-Screen" class="screen-image" />
-    <p class="info-text"></p>
+    <img src="IMG_5378.PNG" alt="Ticket Screen" class="fullscreen-image" />
+    <div class="overlay-text">Hier könnten Ticketdetails stehen ...</div>
   </div>
 
-  <!-- JavaScript -->
   <script src="app.js"></script>
 </body>
 </html>
